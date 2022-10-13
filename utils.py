@@ -92,7 +92,7 @@ def get_model_object_detector(num_classes):
 
     return model
 
-def save_model(epoch, model, optimizer):
+def save_model(epoch, model, optimizer, save_name):
     """
     Function to save the trained model till current epoch, or whenver called
     """
@@ -100,4 +100,4 @@ def save_model(epoch, model, optimizer):
                 'epoch': epoch+1,
                 'model_state_dict': model.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
-                }, 'result/last_model.pth')
+                }, save_name)
